@@ -16,9 +16,9 @@
             </padding>
 
             <Button maxWidth="Infinity" prefHeight="46" style="-fx-background-color:#8b5aa6;                            -fx-text-fill:white;                            -fx-font-weight:bold;                            -fx-background-radius:14;" text="Inicio">
-            <font>
-               <Font size="18.0" />
-            </font></Button>
+                <font>
+                    <Font size="18.0" />
+                </font></Button>
 
             <Button maxWidth="Infinity" prefHeight="43.0" prefWidth="178.0" style="-fx-background-color:#6d3c87;                            -fx-text-fill:#f5f0f7;                            -fx-font-weight:bold;                            -fx-background-radius:12;" text="Registro de &#10;suplidores" />
 
@@ -30,14 +30,14 @@
             <Separator opacity="0.1" />
 
             <Label style="-fx-text-fill:#eadcf2;                           -fx-font-weight:bold;" text="Yara Disla 7">
-            <font>
-               <Font name="Courier New" size="10.0" />
-            </font></Label>
+                <font>
+                    <Font name="Courier New" size="10.0" />
+                </font></Label>
 
             <Button maxWidth="Infinity" prefHeight="42" style="-fx-background-color:#a83c5b;                            -fx-text-fill:white;                            -fx-font-weight:bold;                            -fx-background-radius:14;" text="Salir">
-            <font>
-               <Font size="18.0" />
-            </font></Button>
+                <font>
+                    <Font size="18.0" />
+                </font></Button>
         </VBox>
     </left>
 
@@ -48,54 +48,54 @@
 
             <ImageView fitHeight="533.0" fitWidth="949.0" preserveRatio="true">
                 <image>
-                    <Image url="@imge.png" />
+                    <Image url="@VistaSuplidor.png" />
                 </image>
             </ImageView>
 
 
             <VBox alignment="CENTER" prefHeight="215.0" prefWidth="600.0" spacing="35" translateX="160" translateY="30" />
 
-             <!-- CAMPOS -->
-             <GridPane alignment="CENTER" hgap="40" prefHeight="516.0" prefWidth="907.0" vgap="20">
+            <!-- CAMPOS -->
+            <GridPane alignment="CENTER" hgap="40" prefHeight="516.0" prefWidth="907.0" vgap="20">
 
-                 <Label style="-fx-font-weight:bold;" text="Nombre y Apellido">
-                     <font>
-                  <Font size="14" />
-               </font>
-                 </Label>
-                 <TextField prefHeight="32.0" prefWidth="270" GridPane.rowIndex="1" />
+                <Label style="-fx-font-weight:bold;" text="Nombre y Apellido">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+                <TextField prefHeight="32.0" prefWidth="270" GridPane.rowIndex="1" />
 
-                 <Label style="-fx-font-weight:bold;" text="RNC" GridPane.columnIndex="1">
-                     <font>
-                  <Font size="14" />
-               </font>
-                 </Label>
-                 <TextField prefHeight="29.0" prefWidth="231" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label style="-fx-font-weight:bold;" text="RNC" GridPane.columnIndex="1">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+                <TextField prefHeight="29.0" prefWidth="231" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                 <Label style="-fx-font-weight:bold;" text="Teléfono" GridPane.rowIndex="2">
-                     <font>
-                  <Font size="14" />
-               </font>
-                 </Label>
-                 <TextField prefHeight="38" prefWidth="60.0" GridPane.rowIndex="3" />
+                <Label style="-fx-font-weight:bold;" text="Teléfono" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+                <TextField prefHeight="38" prefWidth="60.0" GridPane.rowIndex="3" />
 
-                 <Label style="-fx-font-weight:bold;" text="Correo" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                  <Font size="14" />
-               </font>
-                 </Label>
-                 <TextField prefHeight="38" prefWidth="231" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <columnConstraints>
-               <ColumnConstraints />
-               <ColumnConstraints hgrow="NEVER" />
-            </columnConstraints>
-            <rowConstraints>
-               <RowConstraints maxHeight="22.0" minHeight="14.0" prefHeight="21.0" />
-               <RowConstraints maxHeight="44.39999999999999" minHeight="36.39999999999999" prefHeight="37.39999999999999" />
-               <RowConstraints />
-               <RowConstraints />
-            </rowConstraints>
-             </GridPane>
+                <Label style="-fx-font-weight:bold;" text="Correo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+                <TextField prefHeight="38" prefWidth="231" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <columnConstraints>
+                    <ColumnConstraints />
+                    <ColumnConstraints hgrow="NEVER" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="22.0" minHeight="14.0" prefHeight="21.0" />
+                    <RowConstraints maxHeight="44.39999999999999" minHeight="36.39999999999999" prefHeight="37.39999999999999" />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
         </StackPane>
     </center>
 

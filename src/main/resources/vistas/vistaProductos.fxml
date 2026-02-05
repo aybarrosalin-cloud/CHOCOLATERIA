@@ -46,7 +46,7 @@
             <PointLight color="CHARTREUSE" lightOn="true" />
             <ImageView fitHeight="500" fitWidth="911" preserveRatio="true">
                 <image>
-                    <Image url="@fondoProducto.png" />
+                    <Image url="@../com/example/chocolateria/fondoProducto.png" />
                 </image>
             </ImageView>
         </StackPane>

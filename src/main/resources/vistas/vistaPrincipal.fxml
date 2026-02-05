@@ -52,9 +52,9 @@
 
             <StackPane maxWidth="440.0" minWidth="440.0" prefWidth="440.0" style="-fx-background-color: #D1C4E9; -fx-background-radius: 0 30 30 0;">
                 <children>
-                    <ImageView fitHeight="564.0" fitWidth="875.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fitHeight="588.0" fitWidth="915.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@logo.png" />
+                            <Image url="@../com/example/chocolateria/logo.png" />
                         </image>
                     </ImageView>
                 </children>

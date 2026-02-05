@@ -20,7 +20,7 @@
                 </font>
             </Button>
 
-            <Button maxWidth="Infinity" prefHeight="43.0" prefWidth="178.0" style="-fx-background-color:#6d3c87; -fx-text-fill:#f5f0f7; -fx-font-weight:bold; -fx-background-radius:12;" text="Registro de &#10;suplidores" />
+            <Button maxWidth="Infinity" prefHeight="43.0" prefWidth="178.0" style="-fx-background-color:#6d3c87; -fx-text-fill:#f5f0f7; -fx-font-weight:bold; -fx-background-radius:12;" text="Orden al &#10;Proveedor" />
             <Button maxWidth="Infinity" style="-fx-background-color:#6d3c87; -fx-text-fill:#f5f0f7; -fx-font-weight:bold; -fx-background-radius:12;" text="Clientes" />
             <Button maxWidth="Infinity" style="-fx-background-color:#6d3c87; -fx-text-fill:#f5f0f7; -fx-font-weight:bold; -fx-background-radius:12;" text="Pedidos" />
 
@@ -45,7 +45,7 @@
         <StackPane>
             <ImageView fitHeight="533.0" fitWidth="949.0" preserveRatio="true">
                 <image>
-                    <Image url="@../com/example/chocolateria/VistaSuplidor.png" />
+                    <Image url="@../com/example/chocolateria/fondoOrdenProveedor.png" />
                 </image>
             </ImageView>
 
@@ -53,33 +53,73 @@
                 <StackPane.margin>
                     <Insets top="50.0" />
                 </StackPane.margin>
+            <DatePicker prefHeight="30.0" prefWidth="268.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label style="-fx-font-weight:bold;" text="Nombre y Apellido" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label prefHeight="20.0" prefWidth="131.0" style="-fx-font-weight:bold;" text="Fecha de compra" GridPane.columnIndex="1" GridPane.rowIndex="0">
                     <font><Font size="14" /></font>
                 </Label>
-                <TextField prefHeight="30.0" prefWidth="270" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-                <Label style="-fx-font-weight:bold;" text="RNC" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label style="-fx-font-weight:bold;" text="Fecha de entrega" GridPane.columnIndex="2" GridPane.rowIndex="0">
                     <font><Font size="14" /></font>
                 </Label>
-                <TextField prefHeight="30.0" prefWidth="231" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label style="-fx-font-weight:bold;" text="Teléfono" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label style="-fx-font-weight:bold;" text="Estado de pago" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <font><Font size="14" /></font>
                 </Label>
-                <TextField prefHeight="30.0" prefWidth="270" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField prefHeight="30.0" prefWidth="270" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                <Label style="-fx-font-weight:bold;" text="Correo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Label style="-fx-font-weight:bold;" text="Monto total" GridPane.columnIndex="2" GridPane.rowIndex="2">
                     <font><Font size="14" /></font>
                 </Label>
-                <TextField prefHeight="30.0" prefWidth="231" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
 
-                <Label style="-fx-font-weight:bold;" text="Ciudad" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <Label style="-fx-font-weight:bold;" text="Descripción" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <font><Font size="14" /></font>
                 </Label>
-                <TextField prefHeight="30.0" prefWidth="270" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField prefHeight="66.0" prefWidth="270.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label layoutX="284.0" layoutY="150.0" prefHeight="20.0" prefWidth="125.0" style="-fx-font-weight:bold;" text="RNC Proveedor">
+               <font>
+                  <Font size="14" />
+               </font>
+            </Label>
+            <TextField layoutX="284.0" layoutY="180.0" prefHeight="30.0" prefWidth="270" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.rowIndex="1" />
+            <DatePicker layoutX="308.0" layoutY="180.0" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label layoutX="113.0" layoutY="150.0" prefHeight="20.0" prefWidth="146.0" style="-fx-font-weight:bold;" text="Cantidad de pedido" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14" />
+               </font>
+            </Label>
+            <Label layoutX="308.0" layoutY="132.0" prefHeight="20.0" prefWidth="131.0" style="-fx-font-weight:bold;" text="Categoría" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14" />
+               </font>
+            </Label>
+            <ChoiceBox prefWidth="150.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: purple;" GridPane.rowIndex="3" />
+            <VBox GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <children>
+                  <CheckBox mnemonicParsing="false" prefHeight="20.0" prefWidth="127.0" text="Programada">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="127.0" text="Urgente">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="10.0" layoutY="30.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="127.0" text="Emergencia">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </VBox>
 
                 <columnConstraints>
+               <ColumnConstraints minWidth="100.0" prefWidth="150.0" />
                     <ColumnConstraints />
                     <ColumnConstraints hgrow="NEVER" />
                 </columnConstraints>

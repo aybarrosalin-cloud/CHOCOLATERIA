@@ -58,30 +58,30 @@
                     <font><Font size="14" /></font>
                 </Label>
 
-                <TextField fx:id="txtNombre" prefHeight="26.0" prefWidth="186.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtNombre" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: white; -fx-border-color: purple;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
                 <Label style="-fx-font-weight:bold;" text="RNC" GridPane.columnIndex="2" GridPane.rowIndex="0">
                     <font><Font size="14" /></font>
                 </Label>
 
-                <TextField fx:id="txtRNC" prefWidth="231" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="txtRNC" prefWidth="231" style="-fx-background-color: white; -fx-border-color: purple;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
 
                 <Label style="-fx-font-weight:bold;" text="Teléfono" GridPane.columnIndex="0" GridPane.rowIndex="2">
                     <font><Font size="14" /></font>
                 </Label>
 
-                <TextField fx:id="txtCel" prefWidth="270" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="txtCel" prefWidth="270" style="-fx-background-color: white; -fx-border-color: purple;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
                 <Label style="-fx-font-weight:bold;" text="Correo" GridPane.columnIndex="2" GridPane.rowIndex="2">
                     <font><Font size="14" /></font>
                 </Label>
 
-                <TextField fx:id="txtCorreo" prefWidth="231" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="txtCorreo" prefWidth="231" style="-fx-background-color: white; -fx-border-color: purple;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
 
                 <Label style="-fx-font-weight:bold;" text="Ciudad" GridPane.columnIndex="0" GridPane.rowIndex="4">
                     <font><Font size="14" /></font>
                 </Label>
-                <ComboBox fx:id="cmbCiudad" onShown="#MostrarCiudad" prefWidth="150.0" GridPane.rowIndex="5" />
+                <ComboBox fx:id="cmbCiudad" onShown="#MostrarCiudad" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: white; -fx-border-color: purple;" GridPane.rowIndex="5" />
 
                 <Button fx:id="btnBuscar" onAction="#fnbuscar" prefHeight="26.0" prefWidth="33.0" style="-fx-background-color:#6d3c87; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:12;" text=" 🔎" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <opaqueInsets>
@@ -90,7 +90,7 @@
                 <columnConstraints>
                     <ColumnConstraints />
                     <ColumnConstraints />
-                    <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints minWidth="10.0" prefWidth="300.0" />
                 </columnConstraints>
                 <rowConstraints>
                     <RowConstraints />

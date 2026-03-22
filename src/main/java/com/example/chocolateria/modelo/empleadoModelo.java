@@ -8,6 +8,7 @@ public class empleadoModelo {
     private String tipoEmpleado;
     private String cedula;
     private String telefono;
+    
 
     public empleadoModelo() {}
 

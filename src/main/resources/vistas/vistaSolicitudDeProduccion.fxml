@@ -53,7 +53,7 @@
 
             <ImageView fitHeight="533" fitWidth="949" preserveRatio="true">
                 <image>
-                    <Image url="@../com/example/chocolateria/OrdenProduccion.png"/>
+                    <Image url="@../com/example/chocolateria/SolicitudDeProduccion.png"/>
                 </image>
             </ImageView>
 

@@ -11,12 +11,12 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/example/chocolateria/vistas/VistaInicioSesion.fxml")
+                getClass().getResource("/com/example/chocolateria/vistas/VistaPrincipal.fxml")
         );
 
         Scene scene = new Scene(loader.load());
 
-        stage.setTitle("Sistema Chocolatería");
+        stage.setTitle("Sistema Chocolateria");
         stage.setScene(scene);
         stage.show();
     }

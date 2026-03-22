@@ -76,7 +76,7 @@ public class suplidorController implements Initializable {
             conexion conexion = new conexion();
             Connection con = conexion.establecerConexion();
 
-            String sql = "INSERT INTO tbl_suplidor (nombre, rnc, telefono, correo, ciudad) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO tbl_suplidor (nombre_apellido, rnc, telefono, correo, ciudad) VALUES (?, ?, ?, ?, ?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, nombre);
@@ -106,7 +106,7 @@ public class suplidorController implements Initializable {
             while (rs.next()) {
 
                 suplidorModelo s = new suplidorModelo(
-                        rs.getString("nombre"),
+                        rs.getString("nombre_apellido"),
                         rs.getString("rnc"),
                         rs.getString("telefono"),
                         rs.getString("correo"),
@@ -133,7 +133,7 @@ public class suplidorController implements Initializable {
     //esto es para consultar, para qu evaya a la bd, busque esa info y me la traiga
     public void fnbuscar(ActionEvent actionEvent) {
         String Nombre = this.txtNombre.getText().trim();
-        String sql = "SELECT * FROM tbl_suplidor WHERE nombre='" + Nombre + "'";
+        String sql = "SELECT * FROM tbl_suplidor WHERE nombre_apellido='" + Nombre + "'";
         buscarDatos(sql); //para buscar la informacion en la base de datos
     }
 
@@ -143,8 +143,8 @@ public class suplidorController implements Initializable {
         String Telefono=(this.txtCel.getText().trim());
         String Correo=(this.txtCorreo.getText().trim());
 
-        String sql="update tbl_Suplidor set nombre ='" + Nombre + "',RNC='" + RNC + "',Telefono='" + Telefono +
-                "',correo='" + Correo + "'where idSuplidor='" + RNC + "'";
+        String sql="update tbl_Suplidor set nombre_apellido='" + Nombre + "',RNC='" + RNC + "',Telefono='" + Telefono +
+                "',correo='" + Correo + "'where rnc='" + RNC + "'";
         System.out.println(sql);
         EjecutarSQL(sql);
         actualizarDatos();
@@ -186,7 +186,7 @@ public class suplidorController implements Initializable {
 
             while (resultSet.next()) {
 
-                txtNombre.setText(resultSet.getString("nombre"));
+                txtNombre.setText(resultSet.getString("nombre_apellido"));
                 txtRNC.setText(resultSet.getString("rnc"));
                 txtCel.setText(resultSet.getString("telefono"));
                 txtCorreo.setText(resultSet.getString("correo"));
@@ -210,72 +210,5 @@ public class suplidorController implements Initializable {
         txtCel.clear();
         txtCorreo.clear();
         cmbCiudad.getSelectionModel().selectFirst();
-    }
-
-    public void insertarDatos() {
-        String sql = "INSERT INTO persona (nombre, apellido, direccion, telefono, email, status)" +
-                "VALUES (?,?,?,?,?,?)";
-
-        try {
-            PreparedStatement pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, "caroline");
-            pstmt.setString(2, "herrera");
-            pstmt.setString(3, "caracas venezuela");
-            pstmt.setString(4, "8095670048");
-            pstmt.setString(5, "carolinaherrera@gmail.com");
-            pstmt.setString(6, "activo");
-
-            //ejecutar la insercion
-            int filasInsertadas = pstmt.executeUpdate();
-            System.out.println("filas insertadas: *" + filasInsertadas);
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al insertar en la bd" + e.toString());
-        }
-    }
-
-    public void borrarDatos(int id) {
-        String query = "delete from persona where idpersona=?";
-
-        try {
-            PreparedStatement pstmt = con.prepareStatement(query);
-            pstmt.setInt(1, id);
-            int filasborrada = pstmt.executeUpdate();
-            System.out.println("Registro borrado: " + filasborrada);
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "error al borrar los datos" + e.toString());
-        }
-    }
-
-    public void actualizarDatos(int id) {
-        String query = "Update Persona set direccion = ? where idPersona = 1";
-
-        try {
-            Connection connection;
-            PreparedStatement pstmt = con.prepareStatement(query);
-            pstmt.setString(1, "caracas");
-            int filaactualizada = pstmt.executeUpdate();
-            System.out.println("Fila actualizada: " + filaactualizada);
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar el dato" + e.toString());
-        }
-    }
-
-    public void leerDatos() {
-
-        String sql = "select * from persona";
-        try {
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next())
-            {
-                System.out.println("Codigo: " + rs.getInt("idpersona"));
-                System.out.println("Nombre: " + rs.getString("nombre"));
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al leer/mostrar datos" + e.toString());
-        }
     }
 }

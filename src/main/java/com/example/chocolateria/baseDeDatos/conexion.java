@@ -1,4 +1,4 @@
-package baseDeDatos;
+package com.example.chocolateria.baseDeDatos;
 
 import javax.swing.*;
 import java.sql.*;
@@ -6,9 +6,9 @@ import java.sql.*;
 public class conexion {
     Connection connection = null;
 
-    String usuario = "dba";
-    String contrase = "YaraConexion";
-    String db = "agenda";
+    String usuario = "rosalin";
+    String contrase = "TuContraseña123";
+    String db = "lachoco";
     String server = "26.136.71.206";
     String puerto = "1433";
     String cadena = "jdbc:sqlserver://" + server + "." + puerto + "/" + db;

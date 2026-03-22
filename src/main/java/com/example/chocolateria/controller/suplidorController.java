@@ -1,6 +1,6 @@
 package com.example.chocolateria.controller;
 
-import baseDeDatos.conexion;
+import com.example.chocolateria.baseDeDatos.conexion;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,7 +16,8 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class suplidorController implements Initializable {
-    conexion conexion = new conexion();
+    private Connection con;
+
     //formulario
     @FXML
     private TextField txtNombre;
@@ -35,27 +36,29 @@ public class suplidorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        conexion conexion = new conexion();
+        con = conexion.establecerConexion();
+        cmbCiudad.setItems(llenaCombo());
         actualizarDatos();
     }
 
-    public ObservableList llenaCombo() {
+    public ObservableList<String> llenaCombo() {
         ObservableList<String> ciudad = FXCollections.observableArrayList();
-        Statement stmt;
 
-        String sql = "Select nombre from ciudad";
-        conexion conexion = new conexion();
-        try (Connection con = conexion.establecerConexion();
-             PreparedStatement preparedStatement = conexion.establecerConexion().prepareStatement(sql);
-             ResultSet resultSet = preparedStatement.executeQuery();
-        ) {
+        String sql = "SELECT nombre FROM tbl_ciudad";
+
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
             while (resultSet.next()) {
                 ciudad.add(resultSet.getString("nombre"));
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-
+            e.printStackTrace();
         }
+
         return ciudad;
     }
 
@@ -73,7 +76,7 @@ public class suplidorController implements Initializable {
             conexion conexion = new conexion();
             Connection con = conexion.establecerConexion();
 
-            String sql = "INSERT INTO suplidor (nombre, rnc, telefono, correo, ciudad) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO tbl_suplidor (nombre, rnc, telefono, correo, ciudad) VALUES (?, ?, ?, ?, ?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, nombre);
@@ -96,9 +99,7 @@ public class suplidorController implements Initializable {
 
         try {
             // conexion conexion = new conexion();
-            Connection con = conexion.establecerConexion();
-
-            String sql = "SELECT * FROM suplidor";
+            String sql = "SELECT * FROM tbl_suplidor";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
@@ -116,7 +117,7 @@ public class suplidorController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }0
+    }
 
     ObservableList<String> Ciudad = FXCollections.observableArrayList();
 
@@ -132,7 +133,7 @@ public class suplidorController implements Initializable {
     //esto es para consultar, para qu evaya a la bd, busque esa info y me la traiga
     public void fnbuscar(ActionEvent actionEvent) {
         String Nombre = this.txtNombre.getText().trim();
-        String sql = "SELECT * FROM suplidor WHERE nombre='" + Nombre + "'";
+        String sql = "SELECT * FROM tbl_suplidor WHERE nombre='" + Nombre + "'";
         buscarDatos(sql); //para buscar la informacion en la base de datos
     }
 
@@ -142,7 +143,7 @@ public class suplidorController implements Initializable {
         String Telefono=(this.txtCel.getText().trim());
         String Correo=(this.txtCorreo.getText().trim());
 
-        String sql="update Suplidor set nombre ='" + Nombre + "',RNC='" + RNC + "',Telefono='" + Telefono +
+        String sql="update tbl_Suplidor set nombre ='" + Nombre + "',RNC='" + RNC + "',Telefono='" + Telefono +
                 "',correo='" + Correo + "'where idSuplidor='" + RNC + "'";
         System.out.println(sql);
         EjecutarSQL(sql);
@@ -164,7 +165,6 @@ public class suplidorController implements Initializable {
 
     public void EjecutarSQL(String sql){
         try {
-            Connection con = conexion.establecerConexion();
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             int result = preparedStatement.executeUpdate();
             if (result == 1) {
@@ -217,7 +217,7 @@ public class suplidorController implements Initializable {
                 "VALUES (?,?,?,?,?,?)";
 
         try {
-            PreparedStatement pstmt = conexion.preparedStatement(sql);
+            PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, "caroline");
             pstmt.setString(2, "herrera");
             pstmt.setString(3, "caracas venezuela");
@@ -238,7 +238,7 @@ public class suplidorController implements Initializable {
         String query = "delete from persona where idpersona=?";
 
         try {
-            PreparedStatement pstmt = conexion.prepareStatement(query);
+            PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setInt(1, id);
             int filasborrada = pstmt.executeUpdate();
             System.out.println("Registro borrado: " + filasborrada);
@@ -252,9 +252,9 @@ public class suplidorController implements Initializable {
         String query = "Update Persona set direccion = ? where idPersona = 1";
 
         try {
-            PreparedStatement pstmt = connection.prepareStatement(query);
+            Connection connection;
+            PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, "caracas");
-
             int filaactualizada = pstmt.executeUpdate();
             System.out.println("Fila actualizada: " + filaactualizada);
         } catch (SQLException e) {
@@ -266,7 +266,7 @@ public class suplidorController implements Initializable {
 
         String sql = "select * from persona";
         try {
-            Statement st = connection.createStatement();
+            Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next())
             {

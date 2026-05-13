@@ -709,6 +709,7 @@ public class solicitudProduccionController {
     @FXML private void irAReportesProduccion(javafx.event.ActionEvent e)  { Navegacion.irA("/vistasFinales/vistaReportes.fxml", e); }
     @FXML private void irAMantenimientoMaquinaria(javafx.event.ActionEvent e) { Navegacion.irA("/vistasFinales/vistaMantenimientoMaquinaria.fxml", e); }
     @FXML private void irAConsultas(javafx.event.ActionEvent e)              { Navegacion.irA("/vistasFinales/vistaConsultasGenerales.fxml", e); }
+    @FXML private void irAGestionUsuarios(javafx.event.ActionEvent e)  { Navegacion.irA(/vistasFinales/vistaGestionUsuarios.fxml, e); }
     @FXML private void irAConsultaSolicitudesProduccion(javafx.event.ActionEvent e) { Navegacion.irA("/vistasFinales/vistaConsultaSolicitudesProduccion.fxml", e); }
     @FXML private void salir(javafx.event.ActionEvent e)                  { Navegacion.salir(e); }
 

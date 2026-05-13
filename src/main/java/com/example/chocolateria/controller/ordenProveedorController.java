@@ -370,6 +370,7 @@ public class ordenProveedorController {
     @FXML private void irAMantenimientoMaquinaria(javafx.event.ActionEvent e) { Navegacion.irA("/vistasFinales/vistaMantenimientoMaquinaria.fxml", e); }
     @FXML private void irAConsultaOrdenProveedor(javafx.event.ActionEvent e){ Navegacion.irA("/vistasFinales/vistaConsultaOrdenProveedor.fxml", e); }
     @FXML private void irAConsultas(javafx.event.ActionEvent e)           { Navegacion.irA("/vistasFinales/vistaConsultasGenerales.fxml", e); }
+    @FXML private void irAGestionUsuarios(javafx.event.ActionEvent e)  { Navegacion.irA(/vistasFinales/vistaGestionUsuarios.fxml, e); }
     @FXML private void salir(javafx.event.ActionEvent e)                  { Navegacion.salir(e); }
 
     private int estadoActual = 0;

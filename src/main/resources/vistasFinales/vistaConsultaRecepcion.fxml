@@ -55,8 +55,8 @@
 
                     <TitledPane animated="true" expanded="true" style="-fx-base:#3d1055; -fx-background-color:#3d1055; -fx-text-fill:white; -fx-font-weight:bold; -fx-font-size:11px;" text="Inventario">
                         <VBox spacing="1" style="-fx-background-color:#2a0a3a; -fx-padding:4 0 4 0;">
-                            <Button maxWidth="Infinity" style="-fx-background-color:#5a2d82; -fx-text-fill:#ffd6ff; -fx-font-size:10px; -fx-alignment:CENTER_LEFT; -fx-padding:4 8 4 16; -fx-border-color:transparent; -fx-font-weight:bold;" onAction="#irASalidaMateriales" text="• Salida de materiales para producción" wrapText="true" />
-                            <Button maxWidth="Infinity" style="-fx-background-color:#5a2d82; -fx-text-fill:#ffd6ff; -fx-font-size:10px; -fx-alignment:CENTER_LEFT; -fx-padding:4 8 4 16; -fx-border-color:transparent; -fx-font-weight:bold;" onAction="#irASalidaProductos" text="• Salida de productos por ventas" wrapText="true" />
+                            <Button maxWidth="Infinity" style="-fx-background-color:#5a2d82; -fx-text-fill:#ffd6ff; -fx-font-size:10px; -fx-alignment:CENTER_LEFT; -fx-padding:4 8 4 16; -fx-border-color:transparent; -fx-font-weight:bold;" onAction="#irASalidaMateriales" text="• Salida de materiales para producción" />
+                            <Button maxWidth="Infinity" style="-fx-background-color:#5a2d82; -fx-text-fill:#ffd6ff; -fx-font-size:10px; -fx-alignment:CENTER_LEFT; -fx-padding:4 8 4 16; -fx-border-color:transparent; -fx-font-weight:bold;" onAction="#irASalidaProductos" text="• Salida de productos por ventas" />
                         </VBox>
                     </TitledPane>
 

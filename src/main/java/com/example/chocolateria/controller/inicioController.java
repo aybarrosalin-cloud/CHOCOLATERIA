@@ -19,7 +19,6 @@ public class inicioController {
     // ── Sidebar: paneles colapsables ──────────────────────────────────────────
     @FXML private TitledPane paneVentas;
     @FXML private TitledPane paneProduccion;
-    @FXML private TitledPane paneInventario;
     @FXML private TitledPane paneCompras;
     @FXML private TitledPane paneRegistros;
     @FXML private TitledPane paneReportes;
@@ -75,19 +74,15 @@ public class inicioController {
         ocultar(btnPagoVenta,       !PermisoRol.tieneAcceso(rol, PAGO_VENTA));
         ocultar(btnGestionEnvios,   !PermisoRol.tieneAcceso(rol, GESTION_ENVIOS));
         ocultar(btnGestionReclamos, !PermisoRol.tieneAcceso(rol, GESTION_RECLAMOS));
+        ocultar(btnSalidaProductos,  !PermisoRol.tieneAcceso(rol, RECEPCION));
         ocultarSiVacio(paneVentas,
-            btnOrdenCliente, btnPagoVenta, btnGestionEnvios, btnGestionReclamos);
+            btnOrdenCliente, btnPagoVenta, btnGestionEnvios, btnGestionReclamos, btnSalidaProductos);
 
         // Produccion
         ocultar(btnSolicitudProduccion, !PermisoRol.tieneAcceso(rol, SOLICITUD_PRODUCCION));
         ocultar(btnOrdenProduccion,     !PermisoRol.tieneAcceso(rol, ORDEN_PRODUCCION));
-        ocultarSiVacio(paneProduccion, btnSolicitudProduccion, btnOrdenProduccion);
-
-        // Inventario
-        boolean verRecepcion = PermisoRol.tieneAcceso(rol, RECEPCION);
-        ocultar(btnSalidaMateriales, !verRecepcion);
-        ocultar(btnSalidaProductos,  !verRecepcion);
-        ocultarSiVacio(paneInventario, btnSalidaMateriales, btnSalidaProductos);
+        ocultar(btnSalidaMateriales, !PermisoRol.tieneAcceso(rol, RECEPCION));
+        ocultarSiVacio(paneProduccion, btnSolicitudProduccion, btnOrdenProduccion, btnSalidaMateriales);
 
         // Compras
         ocultar(btnOrdenProveedor, !PermisoRol.tieneAcceso(rol, ORDEN_PROVEEDOR));
